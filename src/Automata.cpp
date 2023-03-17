@@ -34,7 +34,7 @@ std::string Automata::Coin(int money) {
     if (state == WAIT || state == ACCEPT) {
         state = ACCEPT;
         balance += money;
-        strRes = "Received " + std::to_string(money) + 
+        strRes = "Received " + std::to_string(money) +
             " money.Balance " + std::to_string(balance) + "\n";
     }
     return strRes;
@@ -71,7 +71,7 @@ std::string Automata::getState() {
         break;
     default:
         break;
-    };
+    }
     return strRes;
 }
 
