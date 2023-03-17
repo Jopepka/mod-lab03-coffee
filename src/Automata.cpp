@@ -50,7 +50,7 @@ std::string Automata::etMenu() {
 
 std::string Automata::getState() {
     std::string strRes = "Cannot be performed\n";
-    switch (state){
+    switch (state) {
     case Automata::OFF:
         strRes = "OFF";
         break;
