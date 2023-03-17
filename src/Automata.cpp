@@ -34,7 +34,8 @@ std::string Automata::Coin(int money) {
     if (state == WAIT || state == ACCEPT) {
         state = ACCEPT;
         balance += money;
-        strRes = "Received " + std::to_string(money) + " money.Balance " + std::to_string(balance) + "\n";
+        strRes = "Received " + std::to_string(money) + 
+            " money.Balance " + std::to_string(balance) + "\n";
     }
     return strRes;
 }
@@ -49,8 +50,7 @@ std::string Automata::etMenu() {
 
 std::string Automata::getState() {
     std::string strRes = "Cannot be performed\n";
-    switch (state)
-    {
+    switch (state){
     case Automata::OFF:
         strRes = "OFF";
         break;
@@ -65,6 +65,9 @@ std::string Automata::getState() {
         break;
     case Automata::COOK:
         strRes = "COOK";
+        break;
+    case Automata::COLLECT:
+        strRes = "COLLECT";
         break;
     default:
         break;
@@ -89,7 +92,7 @@ std::string Automata::Check() {
         if (prices[selected] <= balance) {
             state = COOK;
             strRes = "There is enough money on the balance sheet\n";
-        }else {
+        } else {
             state = ACCEPT;
             strRes = "Not enough money on the balance sheet\n";
         }
